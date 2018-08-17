@@ -29,7 +29,7 @@ To see the interface just click on the button extension in the toolbar:
 
 ![](https://i.imgur.com/vYDHenz.png)  
 
-## Enough talk this is what the main screen looks like: 
+## Enough talk this is what the main screen look like: 
 
 ![](https://i.imgur.com/Di0oNUL.png)
 
