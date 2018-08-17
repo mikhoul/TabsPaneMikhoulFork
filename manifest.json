@@ -1,9 +1,9 @@
 {
-  "name": "TabsPane",
-  "version": "0.2",
+  "name": "Visual Tab Manager",
+  "version": "0.8",
   "manifest_version": 2,
-  "description": "Tabs Pain relief. Expose like functionality for Chrome",
-  "homepage_url": "https://github.com/achekulaev/tabspane",
+  "description": "Manage and search all your tabs from one tab",
+  "homepage_url": "https://github.com/mikhoul/TabsPaneMikhoulFork",
   "minimum_chrome_version":"30.0.0.0",
   "icons": {
     "16": "icons/icon16.png",
@@ -12,7 +12,7 @@
   },
   "default_locale": "en",
   "background": {
-    "scripts": ["src/bg/background.js", "js/jquery/jquery.min.js"],
+    "scripts": ["js/background.js", "js/jquery/jquery-3.3.1.min.js"],
     "persistent": true
   },
   "omnibox": {
@@ -20,12 +20,17 @@
   },
   "browser_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "browser action demo"
+    "default_title": "Visual Tab Manager"
   },
   "permissions": [
     "tabs",
     "history",
     "<all_urls>"
   ],
+  
+  "web_accessible_resources": [
+       "img/*"
+     ],
+  
   "offline_enabled": true
 }
