@@ -2,21 +2,50 @@
 body {
   margin: 0;
   padding: 0;
-  background: #E5E5E5;
+  background: #efefef;
   overflow-x: hidden; }
   body.osx {
     font-family: 'Lucida Grande', sans-serif; }
 
 .appleHeader {
-  background-image: -webkit-linear-gradient(top, #e7e7e7 0%, #b8b8b8 100%);
+  position: fixed;
+  width: 100%;
+  z-index: 2;
   padding: 20px 0;
   border-bottom: 1px solid #696969;
   border-top: 1px solid #f1f1f1;
-  text-align: center; }
+  text-align: center; 
+  margin-bottom: 10px;
+  background: #6e7698;
+  }
+  
+.logo {
+  content: url(chrome-extension://__MSG_@@extension_id__/img/VTML_Logo.png);
+  position: absolute;
+  top: 6px;
+  left: 40px;
+  }​
+  
+#logozzz {
+  width: 5%;
+  top: 3px ;
+  display: initial;
+  }
+  
+#magnifier {
+  width: 5%;
+  top: 3px !important;
+  display: initial !important;
+  cursor: unset !important;
+  }
 
 .appleOddRow {
   border-top: 1px solid #efefef;
-  border-bottom: 1px solid #cdcdcd; }
+  border-bottom: 1px solid #cdcdcd;
+  text-align: center;    /* Mike Center Tiles */  
+  border-left: 10px solid #8b000000;
+  border-right: 5px solid #8b000000;
+  }
 
 .appleEvenRow {
   background: #EDEDED;
@@ -25,107 +54,166 @@ body {
 
 #tabsSearch {
   display: block;
-  width: 40em;
+  width: 26em;
   height: 1.5em;
   margin: 0 auto;
   padding: 0px 10px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-  border: 1px solid #8d8d8d;
-  border-radius: 1em;
+  font-size: 15px;
+  border: 2px solid #8d8d8d00;
+  box-shadow: 1px 5px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
   outline: none;
-  /* get rid of webkit outline */ }
+}
+  
   body.osx #tabsSearch {
     font-family: 'Lucida Grande', sans-serif;
-    font-size: 14px; }
+    font-size: 15px; 
+	}
+  
   #tabsSearch:focus {
-    box-shadow: inset 0 0 3px 0 blue;
-    border: 1px solid #6397ca; }
+    transition: all 2.5s;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    border-bottom-color: #0025ff;
+    border-bottom-width: 3px;
+	}
 
 .searchWrapper {
   margin: 0 auto; }
-
+  
 #tabsPane {
-  margin: 0 auto 3em auto;
-  /* matters when width is set tabspane.js:adjustLayout() */
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-  color: #222;
-  display: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none; }
+    width: 100% !important;
+    margin-top: 78px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #222;
+    display: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
   body.osx #tabsPane {
     font-family: 'Lucida Grande', sans-serif;
     font-size: 14px; }
 
-.tabOuter {
-  width: 284px;
-  display: inline-block;
-  margin: 3em 33px 0 33px; }
+.tabOuter {    
+	width: 180px;           /* Espace horizontal entre les tiles */ 
+    height: 140px; 	        /* Espace vertical entre les tiles */
+    display: -webkit-inline-box;      /* -webkit-inline-box: Pour avoir les thumbs collé verticalement Ori: inline-block */
+    }
 
 .tabCapture {
-  display: block;
-  width: 280px;
-  height: 210px;
-  padding: 1px;
-  margin: 0 auto;
-  border-radius: 5px;
-  box-shadow: 0 0 3px 0 #222;
-  cursor: pointer; }
-  .tabCapture:hover {
+    display: block;
+    width: 170px;
+    height: 130px;
+    padding: 0px;
     margin: 0 auto;
-    box-shadow: 0 0 2px 1px #1c55f8, inset 0 0 8px 1px #1c55f8; }
+    border-radius: 2px;
+    background-color: #ffffffcf;
+    box-shadow: 1px 5px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+    transition: box-shadow .25s;
+    cursor: pointer;
+}
+ 
+ .tabCapture:hover{
+    margin: 0 auto;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 -2px 20px 0 rgba(0,0,0,.19);
+    z-index: 1;
+	}   
+	
   .tabThumb.tabHighlighted .tabCapture {
     margin: 0 auto;
-    box-shadow: 0 0 3px 2px #f8860c, inset 0 0 8px 2px #f8860c; }
-  .tabCapture .tabCloseButton {
-    display: none;
-    width: 23px;
-    height: 23px;
-    margin: 3px 0 0 3px;
-    background: rgba(255, 255, 255, 0.35);
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
-    border: 1px solid transparent;
-    border-radius: 23px;
-    cursor: pointer;
-    font-family: verdana; }
-  .tabCapture .tabCloseButton::before {
-    content: "\2716";
-    /* X sign */
-    line-height: 22px;
+    box-shadow: 0 0 14px 4px #242a90, inset 0px 0px 0px 0px #1235e000;
+	}
+	
+	.tabCloseButton {          /* Mike */
+    line-height: 13px;
     vertical-align: baseline;
-    margin-left: 6px;
-    color: #000; }
-  .tabCapture:hover .tabCloseButton {
-    display: block; }
-  .tabCapture .tabCloseButton:hover {
-    background: #e5908c;
-    border: 1px solid #eee;
-    border-radius: 23px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.35);
-    text-shadow: 0px 0px 5px rgba(255, 0, 0, 0.35); }
-    .tabCapture .tabCloseButton:hover::before {
-      color: #eee; }
+    cursor: pointer;
+    background: #f7f7f7;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    top: -129px;
+    margin-left: 3px;
+    color: #000;
+    display: inline-flex;
+    border-radius: 2px;
+    border: 1px solid #c7c6c6;
+}
+	
+  .tabCloseButton::before {      
+    content: "\2715";   /* X sign */
+    margin-left: 1px;
+	}
+      
+  .tabCloseButton:hover {
+    background: #f9f9f9; 
+    border: 1px solid #c7c6c6;
+    color: #222;
+    font-weight: 700;
+    transition: all 0.9s ease-in-out 0.2s;
+    transform: rotate(90deg) scale(1.8);
+	}
+    
 
 .tabFooter {
-  width: 283px;
-  margin: 0 auto;
-  padding-top: 0.3em; }
+  width: 0px;  /* mike */
+  height: 0px;
+ }
 
 .tabIcon {
-  width: 16px;
-  height: 16px;
-  float: left;
-  margin: 0 3px 0 4px;
-  border: 0; }
+    width: 35px;
+    height: 35px;
+    top: -138px;
+    float: left;
+    position: relative;
+    bottom: 119px;
+    right: -67px;
+    background-color: #ffffffde;
+    padding: 1.9px;
+    border-radius: 7px;
+    cursor: pointer;
+	pointer-events: none;   /* Permet de passer le hover à tabCapture */
+}
 
 .tabDescription {
-  width: 260px;
-  white-space: nowrap;
+    position: relative;
+    top: -95px;
+    right: 22px;
+    color: #9d23e6;
+    background: #cccaca00;
+    width: 133px;
+    height: 68px;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    font-size: 12.7px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow: hidden;
+    cursor: pointer;
+	pointer-events: none;     /* Permet de passer le hover à tabCapture */
+}
+
+#url_title {
+  color: #565555;
   overflow: hidden;
-  /* not using ellipsis because it truncates text */
-  -webkit-mask-image: -webkit-linear-gradient(left, black 85%, rgba(0, 0, 0, 0) 100%); }
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;  /* Mike To fix the number of lines displayed in a div - Only work with Chrome */
+  line-height: 118%;
+  }
+  
+#url_description {
+  color: #5965c3;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 13px;
+  font-style: oblique;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 78%;
+  }
 
 #historyPane {
   margin: 1em auto;
@@ -169,7 +257,7 @@ menu {
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
   border-radius: 4px;
-  font-family: Lucida Grande;
+  font-family: Arial;
   font-size: 14px;
   line-height: 15px;
   z-index: 2; }
