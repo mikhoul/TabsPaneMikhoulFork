@@ -8,7 +8,7 @@ $.widget('tabsPane.tabFilter', {
   },
 
   wrapper: $('<div></div>').css({ position: 'relative', display: 'inline-block' }).addClass('searchWrapper'),
-  clearButton: $('<img src="img/clear.png" />').css({ position: 'absolute', right: '1%', top: '15%' }),
+  clearButton: $('<img id="magnifier" src="img/magnifier.png" />').css({ position: 'absolute', right: '1%', top: '15%' }),
 
   _create: function() {
 
