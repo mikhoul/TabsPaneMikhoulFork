@@ -37,3 +37,11 @@ To see the interface just click on the button extension in the toolbar:
 
 ![](https://i.imgur.com/Ugzds7m.png)
 
+**How to install the extension:**
+
+    1- Download the zipped chrome-extension directory
+	2- Unzip the archive on your computer in a folder
+	3- Go to "chrome://extensions
+	4- Enable the Dev Mode in Chrome
+	5- Click "load unpacked extension"
+	6- Choose the directory you downloaded it to.
