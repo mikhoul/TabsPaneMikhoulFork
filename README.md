@@ -39,7 +39,7 @@ To see the interface just click on the button extension in the toolbar:
 
 **How to install the extension:**
 
-    1- Download the zipped chrome-extension directory
+    1- Download the zipped chrome-extension folder
 	2- Unzip the archive on your computer in a folder
 	3- Go to "chrome://extensions
 	4- Enable the Dev Mode in Chrome
